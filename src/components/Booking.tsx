@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
 interface BookingProps {
   isOpen: boolean;
@@ -7,9 +7,9 @@ interface BookingProps {
 
 export const Booking: React.FC<BookingProps> = ({ isOpen, onClose }) => {
   useEffect(() => {
-    // Load TidyCal script
+    // Load Acuity Scheduling script
     const script = document.createElement('script');
-    script.src = 'https://asset-tidycal.b-cdn.net/js/embed.js';
+    script.src = 'https://embed.acuityscheduling.com/js/embed.js';
     script.async = true;
     document.body.appendChild(script);
 
@@ -29,14 +29,21 @@ export const Booking: React.FC<BookingProps> = ({ isOpen, onClose }) => {
         </div>
 
         {/* Modal panel */}
-        <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+        <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full">
           <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
             <div className="sm:flex sm:items-start">
               <div className="mt-3 text-center sm:mt-0 sm:text-left w-full">
                 <h3 className="text-lg leading-6 font-medium text-gray-900 mb-4">
                   Book an Appointment
                 </h3>
-                <div className="tidycal-embed" data-path="sonoaabarah/15-minute-meeting"></div>
+                <iframe 
+                  src="https://app.acuityscheduling.com/schedule.php?owner=35336411&appointmentType=76485271&ref=embedded_csp" 
+                  title="Schedule Appointment" 
+                  width="100%" 
+                  height="800" 
+                  frameBorder="0"
+                  className="w-full"
+                ></iframe>
               </div>
             </div>
           </div>
