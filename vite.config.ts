@@ -7,7 +7,7 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
-  base: '/sonoaac/',
+  base: '',
   server: {
     port: 5173,
     host: true
